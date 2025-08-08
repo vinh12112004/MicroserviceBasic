@@ -1,0 +1,22 @@
+﻿{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/product/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/product/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5188
+        }
+      ],
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 10000, // ms
+        "TimeoutValue": 5000 // ms
+      }
+    }
+  ],
+  "GlobalConfiguration": {}
+}
